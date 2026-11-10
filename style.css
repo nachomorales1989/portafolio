@@ -1,0 +1,557 @@
+
+/* =====================================
+   1. ESTILOS GLOBALES
+===================================== */
+
+@font-face {
+    font-family: "Fontuna";
+    src: url("fonts/fontuna.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Asignature";
+    src: url("fonts/asignature.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #777777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Marco decorativo de las páginas */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 18px;
+    border: 1px solid var(--black);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* =====================================
+   2. NAVEGACIÓN
+===================================== */
+
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 5%;
+    position: relative;
+    z-index: 20;
+}
+
+.brand {
+    font-family: "Fontuna", serif;
+    font-size: 35px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navigation a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 15px;
+    transition: opacity 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 27px;
+    height: 2px;
+    background: var(--black);
+    margin: 6px 0;
+}
+
+/* =====================================
+   3. PÁGINA HOME - SOBRE MÍ
+===================================== */
+
+.home-page main {
+    flex: 1;
+}
+
+.about-section {
+    max-width: 1450px;
+    margin: 25px auto 0;
+    padding: 20px 5%;
+}
+
+.about-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-heading h1,
+.section-title {
+    font-family: "Fontuna", "Times New Roman", serif;
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 3px solid var(--black);
+    border-radius: 50px;
+    padding: 8px 18px;
+    width: 320px;
+    height: 58px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    background: transparent;
+    color: var(--black);
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    position: relative;
+}
+
+.search-icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 4px solid var(--black);
+    border-radius: 50%;
+    position: relative;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 4px;
+    background: var(--black);
+    right: -10px;
+    bottom: -5px;
+    transform: rotate(48deg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 60px;
+    margin-top: 45px;
+}
+
+.about-text {
+    padding-left: 35px;
+}
+
+.signature {
+    font-family: "Asignature", cursive;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 65px;
+}
+
+.description {
+    font-size: clamp(17px, 2vw, 27px);
+    line-height: 1.65;
+    max-width: 750px;
+}
+
+.portrait-frame {
+    width: 100%;
+    max-width: 350px;
+    justify-self: center;
+    position: relative;
+    padding: 25px;
+    background: var(--black);
+}
+
+.portrait-frame::before {
+    content: "";
+    position: absolute;
+    background: var(--black);
+    width: 65%;
+    height: 70%;
+    top: -25px;
+    right: -20px;
+    z-index: -1;
+}
+
+.portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: block;
+    object-fit: cover;
+}
+
+/* =====================================
+   4. PIE DE PÁGINA
+===================================== */
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 5%;
+    margin-top: auto;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 17px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.tiktok-icon {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px;
+    font-size: 24px;
+}
+
+/* =====================================
+   5. PÁGINA PORTAFOLIO
+===================================== */
+
+.page-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1250px;
+    margin: 30px auto;
+    padding: 20px 5%;
+}
+
+.page-description {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.project-card {
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.project-card:hover img {
+    transform: scale(1.03);
+}
+
+.project-info {
+    padding: 18px 0;
+}
+
+.project-info h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.project-info p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   6. PÁGINA CONTACTO
+===================================== */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    margin-top: 35px;
+}
+
+.contact-information h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-information p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.contact-information a {
+    color: var(--black);
+    overflow-wrap: anywhere;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--black);
+    border-radius: 0;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background: var(--white);
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-width: 2px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+.form-message {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   7. RESPONSIVE - TABLETAS
+===================================== */
+
+@media (max-width: 900px) {
+
+    .about-content {
+        gap: 30px;
+    }
+
+    .about-text {
+        padding-left: 0;
+    }
+
+    .contact-layout {
+        gap: 30px;
+    }
+
+    .site-footer {
+        justify-content: center;
+    }
+}
+
+/* =====================================
+   8. RESPONSIVE - CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    body::before {
+        inset: 10px;
+    }
+
+    .site-header {
+        padding: 20px 5%;
+    }
+
+    .brand {
+        font-size: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 30;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        right: 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        background: var(--white);
+        border: 1px solid var(--black);
+        padding: 25px;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .about-section {
+        margin-top: 25px;
+        padding: 15px 5%;
+    }
+
+    .about-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-heading h1,
+    .section-title {
+        font-size: 52px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 35px;
+    }
+
+    .signature {
+        font-size: 37px;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .portrait-frame {
+        max-width: 280px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .page-container {
+        padding: 15px 5%;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .page-description {
+        font-size: 16px;
+    }
+}

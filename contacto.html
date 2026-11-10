@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Ignacio Morales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+    <header class="site-header">
+        <a href="index.html" class="brand">IM.</a>
+
+        <button class="menu-toggle" aria-label="Abrir menú"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navigation">
+            <a href="index.html">Inicio</a>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="contact-section">
+            <h1 class="section-title">CONTACTO</h1>
+            <p class="signature">Ignacio Morales</p>
+
+            <p class="page-description">
+                ¿Tienes una idea o un proyecto en mente?
+                Me gustaría conocerlo. Conversemos y hagámoslo realidad.
+            </p>
+
+            <div class="contact-layout">
+
+                <div class="contact-information">
+                    <h2>Hablemos</h2>
+                    <p>Estoy disponible para nuevos proyectos y colaboraciones.</p>
+
+                    <p>
+                        <strong>Correo:</strong><br>
+                        <a href="mailto:nachomorales21.nm@gmail.com">
+                            nachomorales21.nm@gmail.com
+                        </a>
+                    </p>
+
+                    <p><strong>Instagram:</strong><br>
+                        <a href="https://www.instagram.com/"
+                           target="_blank" rel="noopener noreferrer">
+                            Mi perfil
+                        </a>
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Tu nombre" required>
+
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Tu correo" required>
+
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject"
+                           placeholder="Motivo del mensaje" required>
+
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message"
+                              rows="5" placeholder="Cuéntame tu idea..."
+                              required></textarea>
+
+                    <button type="submit" class="submit-button">
+                        Enviar mensaje
+                    </button>
+
+                    <p id="formMessage" class="form-message"
+                       aria-live="polite"></p>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html">Ignacio Morales</a>
+        <span>Diseño con creatividad y propósito.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
